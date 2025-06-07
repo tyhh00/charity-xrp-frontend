@@ -1,35 +1,80 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className=" mx-auto px-4 pt-48 pb-20 bg-white rounded-xl">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-block text-sm md:text-base font-semibold mb-4 px-4 py-2 bg-[#fff0f0] text-[#cb2121] rounded-full shadow-sm">
-          Revolutionizing Aid Distribution
-        </div>
-        <h1
-          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#cb2121] to-[#a81b1b] bg-clip-text text-transparent leading-tight pb-5"
+    <section className="relative h-[80vh] pt-12 overflow-hidden">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.0&auto=format&fit=crop&w=1200&q=80"
+          alt="People helping"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#cb2121]/90 to-[#cb2121]/70"></div>
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 flex flex-col justify-center h-full text-white">
+        <motion.div 
+          className="max-w-3xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          Transforming Humanitarian Aid Through Blockchain
-        </h1>
-        <p className="text-base md:text-lg text-gray-700 mb-8">
-          Direct, transparent, and secure aid distribution using XRPL technology. 
-          Empowering donors and recipients with decentralized solutions.
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Link href="/donate">
-            <button
-              className="px-8 py-3 rounded-full bg-[#cb2121] hover:bg-[#a81b1b] text-white font-medium transition-all shadow-md"
-            >
-              Donate Now
-            </button>
-          </Link>
-          <button
-            className="px-8 py-3 rounded-full border-2 border-[#cb2121] text-[#cb2121] bg-white hover:bg-[#cb2121] hover:text-white font-medium transition-all shadow-md"
+          <motion.div 
+            className="inline-block text-sm md:text-base font-semibold mb-4 px-5 py-2.5 bg-white text-[#cb2121] rounded-full shadow-md"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Learn More
-          </button>
-        </div>
+            Revolutionizing Aid Distribution
+          </motion.div>
+          
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Transforming<br />
+            Humanitarian Aid<br />
+            <span className="text-white drop-shadow-md mt-2 inline-block">Through Blockchain</span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl mb-8 text-white max-w-2xl font-medium drop-shadow-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Direct, transparent, and secure aid distribution using XRPL technology. 
+            Empowering donors and recipients with decentralized solutions.
+          </motion.p>
+          
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <Link href="/donate">
+              <button
+                className="px-8 py-3 rounded-full bg-white text-[#cb2121] font-semibold text-lg hover:bg-gray-100 transition-all shadow-md"
+              >
+                Donate Now
+              </button>
+            </Link>
+            <Link href="/how-it-works">
+              <button
+                className="px-8 py-3 rounded-full border-2 border-white text-white font-semibold text-lg hover:bg-white/10 transition-all"
+              >
+                Learn More
+              </button>
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
