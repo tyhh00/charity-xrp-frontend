@@ -20,7 +20,7 @@ export function Navbar() {
         <div className="flex items-center gap-8 text-lg font-medium">
           <Link href="/how-it-works" className="text-gray-900 hover:bg-gradient-to-r hover:from-brand-primary hover:to-brand-accent hover:bg-clip-text hover:text-transparent hover:transition-colors transition-colors">How it works</Link>
           <Link href="/donate" className="text-gray-900 hover:bg-gradient-to-r hover:from-brand-primary hover:to-brand-accent hover:bg-clip-text hover:text-transparent hover:transition-colors">Donate</Link>
-          <Link href="#impact" className="text-gray-900 hover:bg-gradient-to-r hover:from-brand-primary hover:to-brand-accent hover:bg-clip-text hover:text-transparent hover:transition-colorstransition-colors">Impact</Link>
+          <Link href="/beneficiaries" className="text-gray-900 hover:bg-gradient-to-r hover:from-brand-primary hover:to-brand-accent hover:bg-clip-text hover:text-transparent hover:transition-colorstransition-colors">Beneficiaries</Link>
           <Link href="#about" className="text-gray-900 hover:bg-gradient-to-r hover:from-brand-primary hover:to-brand-accent hover:bg-clip-text hover:text-transparent hover:transition-colors transition-colors">About</Link>
         </div>
         <div className="">
