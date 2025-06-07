@@ -55,7 +55,7 @@ module.exports = {
   				secondary: '#ED8936',
   				accent: '#38B2AC',
   				dark: '#2D3748',
-  				light: '#F7FAFC',
+  				light: "#F7F7FF",
   				success: '#48BB78'
   			},
   			animation: {

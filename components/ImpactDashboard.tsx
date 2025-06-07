@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const campaigns = [
@@ -54,11 +56,12 @@ const transactions = [
 ];
 
 export function ImpactDashboard() {
+  const router = useRouter();
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-20 px-4 bg-white">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-black mb-1">Live Impact Dashboard</h2>
-        <p className="text-gray-500 mb-8 text-base">Real-time transparency for all stakeholders</p>
+        <h2 className="text-4xl text-center font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent mb-1">Live Impact Dashboard</h2>
+        <p className="text-gray-500 mb-8 text-base text-center pb-2">Real-time transparency for all stakeholders</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Active Campaigns */}
           <div>
@@ -90,7 +93,7 @@ export function ImpactDashboard() {
                     </span>
                   </div>
                   <div className="flex justify-end">
-                    <button className="px-6 py-2 rounded-md bg-[#cb2121] text-white font-semibold shadow hover:bg-[#a81b1b] transition-all">
+                    <button onClick={() => router.push("/donate")} className="px-6 py-2 rounded-md bg-[#cb2121] text-white font-semibold shadow hover:bg-[#a81b1b] transition-all">
                       Donate to Campaign
                     </button>
                   </div>

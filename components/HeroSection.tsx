@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="container mx-auto px-4 pt-48 pb-20 bg-white rounded-xl shadow-lg">
+    <section className=" mx-auto px-4 pt-48 pb-20 bg-white rounded-xl">
       <div className="max-w-4xl mx-auto text-center">
         <div className="inline-block text-sm md:text-base font-semibold mb-4 px-4 py-2 bg-[#fff0f0] text-[#cb2121] rounded-full shadow-sm">
           Revolutionizing Aid Distribution

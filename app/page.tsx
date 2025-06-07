@@ -13,7 +13,6 @@ export default function Home() {
     <div className="relative min-h-screen overflow-hidden bg-white">
       
       {/* Navigation */}
-      <Navbar />
 
       {/* Hero Section */}
       <HeroSection />
@@ -26,9 +25,6 @@ export default function Home() {
 
       {/* Impact Dashboard */}
       <ImpactDashboard />
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

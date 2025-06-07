@@ -47,7 +47,7 @@ export function Footer() {
         </div>
         <hr className="border-gray-700 mb-4" />
         <div className="text-center text-sm text-gray-400">
-          © 2024 AidSafe. All rights reserved. Built with <span className="text-[#cb2121]">♥</span> for humanitarian impact.
+          © 2025 AidSafe. All rights reserved. Built with <span className="text-[#cb2121]">♥</span> for humanitarian impact.
         </div>
       </div>
     </footer>

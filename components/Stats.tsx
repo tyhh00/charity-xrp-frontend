@@ -4,7 +4,7 @@ export function Stats() {
   return (
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-2 text-black">Real-Time Impact</h2>
+        <h2 className="text-4xl font-bold text-center mb-2  bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Real-Time Impact</h2>
         <p className="text-center text-gray-500 mb-12 text-lg">
           Track every transaction and see the difference your donations make
         </p>
