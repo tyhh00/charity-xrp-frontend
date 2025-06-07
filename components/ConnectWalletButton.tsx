@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export function ConnectWalletButton() {
   const [isConnecting, setIsConnecting] = useState(false);
   const [showWalletInfo, setShowWalletInfo] = useState(false);
-  const { connect, disconnect, sendPayment, isConnected, address, userId } = useXRPLClient();
+  const { connect, disconnect, isConnected, address } = useXRPLClient();
 
   const handleConnect = async () => {
     setIsConnecting(true);
@@ -44,10 +44,6 @@ export function ConnectWalletButton() {
             <div>
               <label className="text-sm text-gray-400">Address</label>
               <p className="font-mono text-sm break-all">{address}</p>
-            </div>
-            <div>
-              <label className="text-sm text-gray-400">User ID</label>
-              <p className="font-mono text-sm">{userId}</p>
             </div>
             <Button 
               variant="destructive" 
