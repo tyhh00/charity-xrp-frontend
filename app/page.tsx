@@ -4,29 +4,16 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { HeroSection } from "@/components/HeroSection";
 import { Features } from "@/components/Features";
 import { Stats } from "@/components/Stats";
+import { Navbar } from "@/components/Navbar";
+import { ImpactDashboard } from "@/components/ImpactDashboard";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-brand-dark to-black text-brand-light">
-      <BackgroundBeams />
+    <div className="relative min-h-screen overflow-hidden bg-white">
       
       {/* Navigation */}
-      <nav className="fixed w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/logo.svg" // You'll need to create this
-              alt="AidSafe Logo"
-              width={40}
-              height={40}
-            />
-            <span className="text-2xl font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">
-              AidSafe
-            </span>
-          </div>
-          <ConnectWalletButton />
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <HeroSection />
@@ -36,6 +23,12 @@ export default function Home() {
 
       {/* Impact Stats */}
       <Stats />
+
+      {/* Impact Dashboard */}
+      <ImpactDashboard />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
