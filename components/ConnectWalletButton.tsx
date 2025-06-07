@@ -8,12 +8,15 @@ import { Button } from "@/components/ui/button";
 export function ConnectWalletButton() {
   const [isConnecting, setIsConnecting] = useState(false);
   const [showWalletInfo, setShowWalletInfo] = useState(false);
+  const [success, setSuccess] = useState(false);
   const { connect, disconnect, isConnected, address } = useXRPLClient();
 
   const handleConnect = async () => {
     setIsConnecting(true);
     try {
       await connect();
+      setSuccess(true);
+      setTimeout(() => setSuccess(false), 2000); // Show success for 2 seconds
     } catch (error) {
       console.error('Failed to connect:', error);
     }
@@ -24,6 +27,15 @@ export function ConnectWalletButton() {
     disconnect();
     setShowWalletInfo(false);
   };
+
+  if (success) {
+    return (
+      <button className="bg-green-500 text-white px-4 py-2 rounded-full flex items-center gap-2 cursor-default">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+        Successfully Connected!
+      </button>
+    );
+  }
 
   if (isConnected) {
     return (
