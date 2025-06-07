@@ -4,7 +4,7 @@ import { ConnectWalletButton } from "@/components/ConnectWalletButton";
 
 export function Navbar() {
   return (
-    <nav className="fixed h-auto w-full z-50 border-b border-white/10 bg-white transition-shadow duration-200 hover:shadow-lg backdrop-blur-md">
+    <nav className="fixed py-4 h-auto w-full z-50 border-b border-white/10  transition-shadow duration-200 hover:shadow-lg backdrop-blur-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <Link href="/">
@@ -13,7 +13,7 @@ export function Navbar() {
               alt="AidSafe Logo"
               width={200}
               height={200}
-              className="cursor-pointer h-full w-full"
+              className="cursor-pointer max-h-36 max-w-36"
             />
           </Link>
         </div>
