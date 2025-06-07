@@ -89,7 +89,7 @@ export default function Beneficiaries() {
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 pt-36 py-16">
+    <div className="min-h-screen bg-white px-4 pt-36 pb-32">
       <div className="container mx-auto">
         <motion.h1 
           className="text-4xl font-bold mb-2 text-[#cb2121] text-center"

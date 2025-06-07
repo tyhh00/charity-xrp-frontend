@@ -13,7 +13,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-0">
       {/* Hero Section */}
       <div className="relative h-[70vh] overflow-hidden">
         <div className="absolute inset-0 z-0">

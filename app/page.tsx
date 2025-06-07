@@ -10,7 +10,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-white">
+    <div className="relative min-h-screen overflow-hidden pb-16 bg-white">
       
       {/* Navigation */}
 
