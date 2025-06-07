@@ -6,21 +6,24 @@ import sdk from '@crossmarkio/sdk';
 export function useXRPLClient() {
   const [isConnected, setIsConnected] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
-  const [userId, setUserId] = useState<string | null>(null);
+  const [isConnecting, setIsConnecting] = useState(false);
 
-  // Check if user is already connected on mount
+  // Check for existing connection
   useEffect(() => {
-    const checkSession = async () => {
-      const sessionUser = sdk.session.user?.id;
-      if (sessionUser) {
-        setUserId(sessionUser);
+    const checkConnection = async () => {
+      if (sdk.session.user) {
         setIsConnected(true);
+        setAddress(sdk.session.user.id);
       }
     };
-    checkSession();
+    
+    checkConnection();
   }, []);
 
   const connect = async () => {
+    if (isConnected) return address;
+    
+    setIsConnecting(true);
     try {
       const response = await sdk.async.signInAndWait();
       const userAddress = response.response.data.address;
@@ -30,47 +33,23 @@ export function useXRPLClient() {
     } catch (error) {
       console.error('Failed to connect to Crossmark:', error);
       throw error;
-    }
-  };
-
-  const sendPayment = async (destination: string, amount: string) => {
-    if (!address) throw new Error('Not connected');
-
-    try {
-      // Sign the transaction
-      const signResponse = await sdk.async.signAndWait({
-        TransactionType: "Payment",
-        Account: address,
-        Destination: destination,
-        Amount: amount, // Amount in drops (1 XRP = 1,000,000 drops)
-      });
-
-      // Submit the signed transaction
-      const submitResponse = await sdk.async.submitAndWait(
-        address,
-        signResponse.response.data.txBlob
-      );
-
-      return submitResponse.response.data.resp.result.hash;
-    } catch (error) {
-      console.error('Transaction failed:', error);
-      throw error;
+    } finally {
+      setIsConnecting(false);
     }
   };
 
   const disconnect = () => {
+    // Crossmark doesn't have a direct logout/disconnect function
+    // We can just clear our local state
     setIsConnected(false);
     setAddress(null);
-    setUserId(null);
-    // Add any cleanup needed
   };
 
   return {
     connect,
     disconnect,
-    sendPayment,
     isConnected,
+    isConnecting,
     address,
-    userId,
   };
 } 
