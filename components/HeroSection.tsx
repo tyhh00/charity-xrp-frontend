@@ -7,7 +7,9 @@ export function HeroSection() {
         <div className="inline-block text-sm md:text-base font-semibold mb-4 px-4 py-2 bg-[#fff0f0] text-[#cb2121] rounded-full shadow-sm">
           Revolutionizing Aid Distribution
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#cb2121] to-[#a81b1b] bg-clip-text text-transparent leading-tight pb-5">
+        <h1
+          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#cb2121] to-[#a81b1b] bg-clip-text text-transparent leading-tight pb-5"
+        >
           Transforming Humanitarian Aid Through Blockchain
         </h1>
         <p className="text-base md:text-lg text-gray-700 mb-8">
