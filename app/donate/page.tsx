@@ -150,7 +150,7 @@ export default function Donate() {
     }
     
     // Connect wallet first if not connected (exactly like test page)
-    if (!isConnected || !address) {
+    if (!isConnected || !address || address === undefined) {
       try {
         await connect();
       } catch (err) {
